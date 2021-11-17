@@ -3,9 +3,7 @@ import plotly.offline as pyo
 import plotly.graph_objs as go
 
 # Load CSV file from Datasets folder
-df = pd.read_csv('Datasets/demographics_residing_usa.csv')
-
-#df1 = pd.read_csv('annual_refugee_data.csv')
+df = pd.read_csv('Final_Project/Datasets/demographics_residing_usa.csv')
 # convert year column to datetime format for filtering
 df['Year'] = pd.to_datetime(df['Year'], format = '%Y') # %Y filters only the year
 # filter df to the year 2020 so each country only has a single point for population

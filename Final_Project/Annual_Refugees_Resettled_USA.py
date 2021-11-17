@@ -1,9 +1,9 @@
 import pandas as pd
-import plotly.offline as pyo
 import plotly.graph_objs as go
+import plotly.offline as pyo
 
 # Load CSV file from Datasets folder
-df = pd.read_csv('Datasets/annual_refugee_data.csv')
+df = pd.read_csv('Final_Project/Datasets/annual_refugee_data.csv')
 
 #df['statetotal'] = pd.to_datetime(df['statetotal'])
 
