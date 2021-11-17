@@ -1,6 +1,5 @@
-In the terminal type the following:
+# group23_final_project
 
-1. export FLASK_APP=flask_refugee_app.py
+Clifton Thorne, Will Colvill, Basher Mansor, Jake Sorrentino
 
-
-2. flask run
+Final Project

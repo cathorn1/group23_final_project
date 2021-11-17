@@ -23,7 +23,7 @@ data = [ trace1]
 
 # Preparing layout
 layout = go.Layout(title='Population of Refugees in the United States', xaxis_title="Country of Origin",
-                   yaxis_title="Total population,2020")
+                   yaxis_title="Total Refugee Population")
 # Plot the figure and saving in a html file
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='static/Refugees.html')
+pyo.plot(fig, filename='ref_pops_in_us.html')
