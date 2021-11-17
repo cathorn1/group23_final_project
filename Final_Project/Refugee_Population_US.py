@@ -18,7 +18,7 @@ df = df[(df['Total'] >= 5000)]
 
 # Preparing data ---- create traces for male and female total
 trace1 = go.Bar(x=df['Country of Origin Name'], y=df['Total'],  name='Total')
-data = [ trace1]
+data = [trace1]
 
 
 # Preparing layout
