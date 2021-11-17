@@ -3,7 +3,7 @@ import plotly.offline as pyo
 import plotly.graph_objs as go
 
 # Load CSV file from Datasets folder
-df = pd.read_csv('../Datasets/demographics_residing_usa.csv')
+df = pd.read_csv('Datasets/demographics_residing_usa.csv')
 
 #df1 = pd.read_csv('annual_refugee_data.csv')
 # convert year column to datetime format for filtering
@@ -12,15 +12,18 @@ df['Year'] = pd.to_datetime(df['Year'], format = '%Y') # %Y filters only the yea
 df = df[(df['Year'] == "2020")]
 # filter df further to only contain refugee data instead of both refugee and asylum
 df = df[(df['Population Type'] == "REF")]
+df = df[(df['Total'] >= 5000)]
+
+
 
 # Preparing data ---- create traces for male and female total
-trace3 = go.Scatter(x=df['Country of Origin Code'], y=df['Total'], mode='markers+lines', name='Total')
-data = [ trace3]
+trace1 = go.Bar(x=df['Country of Origin Name'], y=df['Total'],  name='Total')
+data = [ trace1]
 
 
 # Preparing layout
-layout = go.Layout(title='Population of Refugees and Asylum Seekers in the United States', xaxis_title="Country of Origin",
-                   yaxis_title="Total population")
+layout = go.Layout(title='Population of Refugees in the United States', xaxis_title="Country of Origin",
+                   yaxis_title="Total population,2020")
 # Plot the figure and saving in a html file
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='static/multilinechart.html')
+pyo.plot(fig, filename='static/Refugees.html')

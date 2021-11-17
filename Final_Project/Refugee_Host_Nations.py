@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.offline as pyo
 import plotly.graph_objs as go
 
-df = pd.read_csv('Datasets/annual_refugee_data.csv')
+df = pd.read_csv('annual_refugee_data.csv')
 
 
 #
