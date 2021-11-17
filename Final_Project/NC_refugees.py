@@ -17,10 +17,10 @@ df = pd.read_csv('Datasets/annual_refugee_data.csv')
 
 df = df[(df['state'] == 'North Carolina')]
 
-df = df.groupby(['state'])['annualtotal'].sum().reset_index()
+# df = df.groupby(['state'])['annualtotal'].sum().reset_index()
 
 # Preparing data
-trace1 = [go.Bar(x=df['year'], y=df['people'])]
+trace1 = [go.Bar(x=df['year'], y=df['annualtotal'])]
 
 # Preparing layout
 layout = go.Layout(title='Annual Total of Refugees Resettled in North Carolina', xaxis_title="Year",
