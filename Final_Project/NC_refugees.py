@@ -20,7 +20,7 @@ df = df[(df['state'] == 'North Carolina')]
 # df = df.groupby(['state'])['annualtotal'].sum().reset_index()
 
 # Preparing data
-trace1 = [go.Bar(x=df['year'], y=df['annualtotal'])]
+trace1 = [go.Bar(x=df['year'], y=df['people'])]
 
 # Preparing layout
 layout = go.Layout(title='Annual Total of Refugees Resettled in North Carolina', xaxis_title="Year",
