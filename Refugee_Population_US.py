@@ -3,7 +3,7 @@ import plotly.offline as pyo
 import plotly.graph_objs as go
 
 # Load CSV file from Datasets folder
-df = pd.read_csv('Datasets/demographics_residing_usa.csv')
+df = pd.read_csv('Final_Project/Datasets/demographics_residing_usa.csv')
 
 #df1 = pd.read_csv('annual_refugee_data.csv')
 # convert year column to datetime format for filtering
@@ -23,7 +23,7 @@ data = [ trace1]
 
 # Preparing layout
 layout = go.Layout(title='Population of Refugees in the United States', xaxis_title="Country of Origin",
-                   yaxis_title="Total population")
+                   yaxis_title="Total Refugee Population")
 # Plot the figure and saving in a html file
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='static/multilinechart.html')
+pyo.plot(fig, filename='multilinechart.html')

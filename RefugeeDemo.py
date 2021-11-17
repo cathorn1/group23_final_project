@@ -3,7 +3,7 @@ import plotly.offline as pyo
 import plotly.graph_objs as go
 
 # Load CSV file from Datasets folder
-df = pd.read_csv('annual_refugee_data.csv')
+df = pd.read_csv('Final_Project/annual_refugee_data.csv')
 
 #df['statetotal'] = pd.to_datetime(df['statetotal'])
 
@@ -24,8 +24,8 @@ df = df.sort_values('year')
 data = [go.Scatter(x=df['year'], y=df['annualtotal'], mode='lines', name='annualtotal')]
 
 # Preparing layout
-layout = go.Layout(title='annual_refugee_data.numbers', xaxis_title="annual_refugee_data.numbers",
-                   yaxis_title="Number of People")
+layout = go.Layout(title='Annual Amount of Refugees Resettled in the USA', xaxis_title="Year",
+                   yaxis_title="Number of Refugees")
 
 
 # Plot the figure and saving in a html file
