@@ -24,4 +24,4 @@ layout = go.Layout(title='Population of Asylum Seekers in the United States', xa
                    yaxis_title="Total population, 2020")
 # Plot the figure and saving in a html file
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='assylum_seekers_usa.html')
+pyo.plot(fig, filename='static/assylum_seekers_usa.html')

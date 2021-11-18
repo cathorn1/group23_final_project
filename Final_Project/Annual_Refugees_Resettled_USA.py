@@ -25,4 +25,4 @@ layout = go.Layout(title='Annual Amount of Refugees Resettled in the USA', xaxis
 
 # Plot the figure and saving in a html file
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='annual_ref_usa.html')
+pyo.plot(fig, filename='static/annual_ref_usa.html')

@@ -15,4 +15,4 @@ layout = go.Layout(title='Annual Total of Refugees Resettled in North Carolina',
 
 # Plot the figure and saving in a html file
 fig = go.Figure(data=trace1, layout=layout)
-pyo.plot(fig, filename='nc_barchart.html')
+pyo.plot(fig, filename='static/nc_barchart.html')
