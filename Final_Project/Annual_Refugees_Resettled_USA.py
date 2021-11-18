@@ -3,7 +3,7 @@ import plotly.graph_objs as go
 import plotly.offline as pyo
 
 # Load CSV file from Datasets folder
-df = pd.read_csv('Final_Project/Datasets/annual_refugee_data.csv')
+df = pd.read_csv('Datasets/annual_refugee_data.csv')
 
 #df['statetotal'] = pd.to_datetime(df['statetotal'])
 
@@ -14,11 +14,6 @@ df = pd.read_csv('Final_Project/Datasets/annual_refugee_data.csv')
 
 df = df[(df['state'] == 'North Carolina') & (df['year'] >= 2010)]
 df = df.sort_values('year')
-# Preparing data
-#data = [go.Scatter(x=df['Date'], y=df['Confirmed'], mode='lines', name='Death')]
-
-# Sorting values and select 20 first value
-#new_df = new_df.sort_values(by=['statetotal'], ascending=[False]).head(20).reset_index()
 
 # Preparing data
 data = [go.Scatter(x=df['year'], y=df['annualtotal'], mode='lines', name='annualtotal')]
