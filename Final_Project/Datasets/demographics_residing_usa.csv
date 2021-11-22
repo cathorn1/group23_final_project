@@ -1,4 +1,4 @@
-Year,Country of Origin Code,Country of Asylum Code,Country of Origin Name,Country of Asylum Name,Population Type,location,urbanRural,accommodationType,Female 0-4,Female 5-11,Female 12-17,Female 18-59,Female 60 or more,Female Unknown,Female Total,Male 0-4,Male 5-11,Male 12-17,Male 18-59,Male 60 or more,Male Unknown,Male Total,Total
+year,city,Country of Asylum Code,Country of Origin Name,Country of Asylum Name,Population Type,location,urbanRural,accommodationType,Female 0-4,Female 5-11,Female 12-17,Female 18-59,Female 60 or more,Female Unknown,Female Total,Male 0-4,Male 5-11,Male 12-17,Male 18-59,Male 60 or more,Male Unknown,Male Total,people
 2001,AFG,USA,Afghanistan,United States of America,ASY,,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,330
 2001,AFG,USA,Afghanistan,United States of America,REF,,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7426
 2001,ALB,USA,Albania,United States of America,ASY,,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2517
