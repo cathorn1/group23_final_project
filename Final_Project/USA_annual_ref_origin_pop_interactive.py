@@ -18,13 +18,13 @@ app.layout = html.Div(children=[
                 'color': '#ef3e18'
             }
             ),
-    html.Div('Asylum Seeker', style={'textAlign': 'center'}),
+    html.Div('Origin of Refugees by Country', style={'textAlign': 'center'}),
     html.Div('United State Refugee Population -  2010 to 2020', style={'textAlign': 'center'}),
     html.Br(),
     html.Br(),
     html.Hr(style={'color': '#7FDBFF'}),
     html.H3('Interactive Bar chart', style={'color': '#df1e56'}),
-    html.Div('This bar chart represent the number of refugees in top 15 cities in NC by selected year.'),
+    html.Div('This bar chart represents the number of refugees in the top 15 states in the USA by selected year.'),
     dcc.Graph(id='graph1'),
     html.Div('Please select a year', style={'color': '#ef3e18', 'margin':'10px'}),
     dcc.Dropdown(
@@ -44,7 +44,7 @@ app.layout = html.Div(children=[
             {'label': '2020', 'value': 2020},
 
         ],
-        value=2018
+        value=2020
     )
 ])
 
@@ -57,14 +57,16 @@ def update_figure(selected_year):
 
     filtered_df = filtered_df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
 
-    new_df = filtered_df.groupby(['city'])['people'].sum().reset_index()
+    filtered_df = filtered_df[(filtered_df['Population Type'] == "REF")]
+
+    new_df = filtered_df.groupby(['Country of Origin Name'])['people'].sum().reset_index()
 
     new_df = new_df.sort_values(by=['people'], ascending=[False]).head(15)
-    data_interactive_barchart = [go.Bar(x=new_df['city'], y=new_df['people'])]
-    return {'data': data_interactive_barchart, 'layout': go.Layout(title='Asylum seeker  '
+    data_interactive_barchart = [go.Bar(x=new_df['Country of Origin Name'], y=new_df['people'])]
+    return {'data': data_interactive_barchart, 'layout': go.Layout(title='Top Refugee Populations in USA in '
                                                                          + str(selected_year),
                                                                    xaxis={'title': ' Country'},
-                                                                   yaxis={'title': 'Total Asylum seeker'})}
+                                                                   yaxis={'title': 'Total Refugee Population'})}
 
 
 if __name__ == '__main__':
