@@ -51,12 +51,14 @@ def update_figure(selected_year):
 
     filtered_df = filtered_df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
 
-    filtered_df = filtered_df.groupby(['origin'])['stateorigin'].reset_index()
+    filtered_df = filtered_df.reset_index()
+
+    #filtered_df = filtered_df.groupby(['origin'])
 
     #new_df = new_df.sort(by=['stateorigin'], ascending=[False]).head(15)
     filtered_df = filtered_df.sort_values(by=['stateorigin'], ascending=[False])
     data_interactive_barchart = [go.Bar(x=filtered_df['origin'], y=filtered_df['stateorigin'])]
-    return {'data': data_interactive_barchart, 'layout': go.Layout(title='Refugees in NC by Country of Origin'
+    return {'data': data_interactive_barchart, 'layout': go.Layout(title='Refugees in NC by Country of Origin in '
                                                                          + str(selected_year),
                                                                    xaxis={'title': 'Country of Origin'},
                                                                    yaxis={'title': 'Population'})}
