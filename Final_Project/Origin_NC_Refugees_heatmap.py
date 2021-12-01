@@ -67,7 +67,7 @@ def update_figure(selected_year):
         hover_data={'origin' : False},
         range_color=(1, filtered_df['stateorigin'].max()),
         labels={'stateorigin': 'Refugees'},
-        title= 'Origins of Refugees in North Carolina')
+        title= 'Origins of Refugees in North Carolina in ' + str(selected_year))
     fig.update_geos(visible = False, resolution = 110,
                     showland = True, landcolor= "lightgray"
                     )
