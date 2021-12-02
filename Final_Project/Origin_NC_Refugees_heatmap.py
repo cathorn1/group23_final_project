@@ -71,7 +71,7 @@ def update_figure(selected_year):
     fig.update_geos(visible = False, resolution = 110,
                     showland = True, landcolor= "lightgray"
                     )
-    #fig.update_layout(title_text = , height = 300, margin={"r": 0, "t": 0, "l": 0, "b": 0})
+    fig.update_layout(height = 500, margin={"r": 0, "t": 0, "l": 0, "b": 0})
     return fig
 
 
