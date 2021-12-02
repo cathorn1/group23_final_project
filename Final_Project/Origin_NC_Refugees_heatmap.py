@@ -24,7 +24,7 @@ app.layout = html.Div(children=[
     html.Br(),
     html.Hr(style={'color': '#7FDBFF'}),
     html.H3('Interactive Choropleth Map', style={'color': '#df1e56'}),
-    html.Div('This map colors the origin countries of refugees in North Carolina based on how came from there.'),
+    html.Div('This map colors the origin countries of refugees in North Carolina based on how many came from there.'),
 
     html.Div('Please select a year', style={'color': '#ef3e18', 'margin':'10px'}),
     dcc.Dropdown(
@@ -77,35 +77,3 @@ def update_figure(selected_year):
 
 if __name__ == '__main__':
     app.run_server()
-
-# geojson = px.data.election_geojson()
-# candidates = df.winner.unique()
-#
-# app = dash.Dash(__name__)
-#
-# app.layout = html.Div([
-#     html.P("Candidate:"),
-#     dcc.RadioItems(
-#         id='candidate',
-#         options=[{'value': x, 'label': x}
-#                  for x in candidates],
-#         value=candidates[0],
-#         labelStyle={'display': 'inline-block'}
-#     ),
-#     dcc.Graph(id="choropleth"),
-# ])
-#
-# @app.callback(
-#     Output("choropleth", "figure"),
-#     [Input("candidate", "value")])
-# def display_choropleth(candidate):
-#     fig = px.choropleth(
-#         df, geojson=geojson, color=candidate,
-#         locations="district", featureidkey="properties.district",
-#         projection="mercator", range_color=[0, 6500])
-#     fig.update_geos(fitbounds="locations", visible=False)
-#     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-#
-#     return fig
-#
-# app.run_server(debug=True)
