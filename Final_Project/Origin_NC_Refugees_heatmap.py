@@ -56,8 +56,7 @@ def update_figure(selected_year):
 
     new_df = filtered_df.groupby(['origin'])['stateorigin'].first().reset_index()
     new_df = new_df[(new_df['stateorigin'] > 0)]
-    #new_df = new_df.sort(by=['stateorigin'], ascending=[False]).head(15)
-    #new_df = new_df.sort_values(by=['stateorigin'], ascending=[False])
+
     fig = px.choropleth(
         new_df,
         locations = 'origin',
